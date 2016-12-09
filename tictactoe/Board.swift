@@ -27,6 +27,7 @@ class BoardView: UIView {
         self.fieldHeight = boardHeight / CGFloat(boardRows)
         self.fieldWidth = boardWidth / CGFloat(boardColumns)
         
+        var fieldArray = [field]
         let boardFrame = CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight)
         super.init(frame: boardFrame)
         _ = UIView(frame: boardFrame)
@@ -38,8 +39,10 @@ class BoardView: UIView {
                 field.layer.borderWidth = 2
                 field.backgroundColor = UIColor.white
                 self.addSubview(field)
+                fieldArray.append(field)
             }
         }
+        print(fieldArray)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

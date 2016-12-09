@@ -9,15 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let board = BoardView(boardWidth: 300, boardHeight: 300, boardColumns: 3, boardRows: 3)
+        let screenView = view
+        screenView?.addSubview(board)
+        board.center = screenView!.center
     }
 
 
