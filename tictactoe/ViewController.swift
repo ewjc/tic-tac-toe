@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         screenView?.addSubview(board)
         board.center = screenView!.center
     }
+    
+    
 
 
 }
