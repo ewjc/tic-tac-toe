@@ -15,7 +15,7 @@ class BoardView: UIView {
     var fieldHeight: CGFloat!
     var fieldWidth: CGFloat!
     var board: UIView!
-    var field: UIView!
+    var field: UILabel!
     var boardColumns: Int!
     var boardRows: Int!
     
@@ -46,6 +46,7 @@ class BoardView: UIView {
         }
                 print(fieldsArray)
     }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
