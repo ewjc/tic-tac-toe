@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095190FC1E008C5E000F567C /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095190FB1E008C5E000F567C /* Field.swift */; };
 		09A597821DFB3F0200744D04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A597811DFB3F0200744D04 /* AppDelegate.swift */; };
 		09A597841DFB3F0200744D04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A597831DFB3F0200744D04 /* ViewController.swift */; };
 		09A597871DFB3F0200744D04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A597851DFB3F0200744D04 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095190FB1E008C5E000F567C /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		09A5977E1DFB3F0200744D04 /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A597811DFB3F0200744D04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09A597831DFB3F0200744D04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				09A597811DFB3F0200744D04 /* AppDelegate.swift */,
+				095190FB1E008C5E000F567C /* Field.swift */,
 				09A597931DFB40EE00744D04 /* Board.swift */,
 				09A597831DFB3F0200744D04 /* ViewController.swift */,
 				09A597851DFB3F0200744D04 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				09A597841DFB3F0200744D04 /* ViewController.swift in Sources */,
 				09A597821DFB3F0200744D04 /* AppDelegate.swift in Sources */,
+				095190FC1E008C5E000F567C /* Field.swift in Sources */,
 				09A597941DFB40EE00744D04 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,7 @@
 				09A597921DFB3F0200744D04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,31 +32,18 @@ class BoardView: UIView, UIGestureRecognizerDelegate {
         let boardFrame = CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight)
         super.init(frame: boardFrame)
         _ = UIView(frame: boardFrame)
-        
-        
-
-        
+    
         for boardColumn in 0..<boardColumns {
             for boardRow in 0..<boardRows {
-                let fieldFrame = CGRect(x: CGFloat(boardColumn) * fieldWidth, y: CGFloat(boardRow) * fieldHeight, width: fieldHeight, height: fieldWidth)
-                let field = UIView(frame: fieldFrame)
-                field.layer.borderWidth = 2
-                field.backgroundColor = UIColor.white
-                self.addSubview(field)
-                fieldsArray[boardRow].append(field)
-                let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BoardView.handleTap(_:)))
-                gestureRecognizer.delegate = self
-                field.addGestureRecognizer(gestureRecognizer)
+                
+                // field class should be init here, pass in x, y vals
+
             }
         }
                 print(fieldsArray)
     }
-    
+    // this should go in the field class
 
-    func handleTap(_ sender: UITapGestureRecognizer) {
-        print([fieldsArray])
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
