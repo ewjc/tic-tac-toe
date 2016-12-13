@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BoardView: UIView {
+class BoardView: UIView, UIGestureRecognizerDelegate {
     var boardWidth: CGFloat!
     var boardHeight: CGFloat!
     var fieldHeight: CGFloat!
@@ -18,6 +18,7 @@ class BoardView: UIView {
     var field: UILabel!
     var boardColumns: Int!
     var boardRows: Int!
+    var fieldsArray = [[],[],[]]
     
     init(boardWidth: CGFloat, boardHeight: CGFloat, boardColumns: Int!, boardRows: Int) {
         self.boardColumns = boardColumns
@@ -31,9 +32,10 @@ class BoardView: UIView {
         let boardFrame = CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight)
         super.init(frame: boardFrame)
         _ = UIView(frame: boardFrame)
-      
         
-        var fieldsArray = [[],[],[]]
+        
+
+        
         for boardColumn in 0..<boardColumns {
             for boardRow in 0..<boardRows {
                 let fieldFrame = CGRect(x: CGFloat(boardColumn) * fieldWidth, y: CGFloat(boardRow) * fieldHeight, width: fieldHeight, height: fieldWidth)
@@ -42,9 +44,17 @@ class BoardView: UIView {
                 field.backgroundColor = UIColor.white
                 self.addSubview(field)
                 fieldsArray[boardRow].append(field)
+                let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BoardView.handleTap(_:)))
+                gestureRecognizer.delegate = self
+                field.addGestureRecognizer(gestureRecognizer)
             }
         }
                 print(fieldsArray)
+    }
+    
+
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        print([fieldsArray])
     }
     
     required init?(coder aDecoder: NSCoder) {

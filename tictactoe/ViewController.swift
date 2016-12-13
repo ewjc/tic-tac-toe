@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
 
     override func viewDidLoad() {
@@ -17,8 +17,9 @@ class ViewController: UIViewController {
         let screenView = view
         screenView?.addSubview(board)
         board.center = screenView!.center
+        
     }
-    
+
     
 
 
