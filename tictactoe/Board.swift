@@ -21,19 +21,21 @@ class BoardView: UIView, UIGestureRecognizerDelegate {
         self.boardRows = boardRows
         self.boardWidth = boardWidth
         self.boardHeight = boardHeight
-        let fieldWidth = boardWidth / 3
-        let fieldHeight = boardHeight / 3
+        let fieldWidth = boardWidth / CGFloat(boardColumns)
+        let fieldHeight = boardHeight / CGFloat(boardRows)
         
         let boardFrame = CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight)
         super.init(frame: boardFrame)
     
-        var fieldsArray = [[],[],[]]
+        var fieldsArray: [[Field]] = []
         for boardColumn in 0..<boardColumns {
+            var tempArray: [Field] = []
             for boardRow in 0..<boardRows {
                 let field = Field(boardColumn: boardColumn, boardRow: boardRow, fieldWidth: fieldWidth, fieldHeight: fieldHeight)
                 self.addSubview(field)
-                fieldsArray[boardRow].append(field)
+                tempArray.append(field)
             }
+            fieldsArray.append(tempArray)
         }
                 print(fieldsArray)
     }

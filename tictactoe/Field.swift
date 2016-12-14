@@ -24,9 +24,7 @@ class Field: UIView, UIGestureRecognizerDelegate {
         self.boardRow = boardRow
         
         let fieldFrame = CGRect(x: CGFloat(boardColumn) * fieldWidth, y: CGFloat(boardRow) * fieldHeight, width: fieldHeight, height: fieldWidth)
-        
         super.init(frame: fieldFrame)
-        
         self.layer.borderWidth = 2
         self.backgroundColor = UIColor.white
         
