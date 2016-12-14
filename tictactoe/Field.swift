@@ -14,35 +14,26 @@ protocol FieldTapRecognizerDelegate {
 }
 
 class Field: UIView, UIGestureRecognizerDelegate {
-    var fieldHeight: CGFloat!
-    var fieldWidth: CGFloat!
-    var locationX: Int!
-    var locationY: Int!
     var boardColumn: Int!
     var boardRow: Int!
-    var fieldsArray = [[],[],[]]
     var delegate: FieldTapRecognizerDelegate!
-
     
-    init(boardColumn: Int, boardRow: Int, fieldWidth: CGFloat, fieldHeight: CGFloat, locationX: Int, locationY: Int) {
+    
+    init(boardColumn: Int, boardRow: Int, fieldWidth: CGFloat, fieldHeight: CGFloat) {
         self.boardColumn = boardColumn
         self.boardRow = boardRow
-        self.fieldWidth = fieldWidth
-        self.fieldHeight = fieldHeight
-        self.locationX = locationX
-        self.locationY = locationY
         
         let fieldFrame = CGRect(x: CGFloat(boardColumn) * fieldWidth, y: CGFloat(boardRow) * fieldHeight, width: fieldHeight, height: fieldWidth)
+        
         super.init(frame: fieldFrame)
-        let field = UIView(frame: fieldFrame)
-        field.layer.borderWidth = 2
-        field.backgroundColor = UIColor.white
-        self.addSubview(field)
-        fieldsArray[boardRow].append(field)
+        
+        self.layer.borderWidth = 2
+        self.backgroundColor = UIColor.white
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(Field.handleTap(_:)))
         gestureRecognizer.delegate = self
-        field.addGestureRecognizer(gestureRecognizer)
-    
+        self.addGestureRecognizer(gestureRecognizer)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +41,8 @@ class Field: UIView, UIGestureRecognizerDelegate {
     }
     
     func handleTap(_ sender: UITapGestureRecognizer) {
-        let location = sender.location(in: self)
+        _ = sender.location(in: self)
+        print(boardColumn, boardRow)
     }
     
 }

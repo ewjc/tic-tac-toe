@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let board = BoardView(boardWidth: 300, boardHeight: 300, boardColumns: 3, boardRows: 3)
         let screenView = view
         screenView?.addSubview(board)

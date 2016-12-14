@@ -12,37 +12,31 @@ import UIKit
 class BoardView: UIView, UIGestureRecognizerDelegate {
     var boardWidth: CGFloat!
     var boardHeight: CGFloat!
-    var fieldHeight: CGFloat!
-    var fieldWidth: CGFloat!
-    var board: UIView!
-    var field: UILabel!
     var boardColumns: Int!
     var boardRows: Int!
-    var fieldsArray = [[],[],[]]
+    
     
     init(boardWidth: CGFloat, boardHeight: CGFloat, boardColumns: Int!, boardRows: Int) {
         self.boardColumns = boardColumns
         self.boardRows = boardRows
         self.boardWidth = boardWidth
         self.boardHeight = boardHeight
-        self.fieldHeight = boardHeight / CGFloat(boardRows)
-        self.fieldWidth = boardWidth / CGFloat(boardColumns)
-
+        let fieldWidth = boardWidth / 3
+        let fieldHeight = boardHeight / 3
         
         let boardFrame = CGRect(x: 0, y: 0, width: boardWidth, height: boardHeight)
         super.init(frame: boardFrame)
-        _ = UIView(frame: boardFrame)
     
+        var fieldsArray = [[],[],[]]
         for boardColumn in 0..<boardColumns {
             for boardRow in 0..<boardRows {
-                
-                // field class should be init here, pass in x, y vals
-
+                let field = Field(boardColumn: boardColumn, boardRow: boardRow, fieldWidth: fieldWidth, fieldHeight: fieldHeight)
+                self.addSubview(field)
+                fieldsArray[boardRow].append(field)
             }
         }
                 print(fieldsArray)
     }
-    // this should go in the field class
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
